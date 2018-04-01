@@ -23,6 +23,8 @@ public class Parser {
                     Method method = actions.actionsMap.get(input);
                     if (method != null ){
                         method.invoke(parking);
+                    } else {
+                        System.out.println("Invalid input");
                     }
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
@@ -33,7 +35,12 @@ public class Parser {
             case 2:
                 try {
                     Method method = actions.actionsMap.get(input_arr[0]);
-                    method.invoke(parking, input_arr[1]);
+                    if (method != null) {
+                        method.invoke(parking, input_arr[1]);
+                    } else {
+                        System.out.println("Invalid input");
+                    }
+
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 } catch (InvocationTargetException e) {
@@ -46,7 +53,7 @@ public class Parser {
                     if (method != null) {
                         method.invoke(parking, input_arr[1], input_arr[2]);
                     } else {
-                        System.out.println("Perintah " + input_arr[0] + " tidak ada");
+                        System.out.println("Invalid input");
                     }
 
                 } catch (IllegalAccessException e) {
@@ -56,7 +63,7 @@ public class Parser {
                 }
                 break;
             default:
-                System.out.println("Default Input");
+                System.out.println("Invalid input");
         }
     }
 

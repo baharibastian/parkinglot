@@ -27,8 +27,10 @@ public class Parking {
     }
 
     public void park(String noReg, String color) {
-        if (this.park.size() == this.sizeParkingSlot) {
-            System.out.println("parkir full gan");
+        if (this.sizeParkingSlot == 0) {
+            System.out.println("no parking slots have been created");
+        } else if (this.park.size() == this.sizeParkingSlot) {
+            System.out.println("Sorry, parking lot is full");
         } else {
             Collections.sort(parkingSpace);
             String slot = parkingSpace.get(0).toString();
@@ -40,8 +42,8 @@ public class Parking {
     }
 
     public void status() {
-        if (sizeParkingSlot == 0) {
-            System.out.println("the parking slot is 0");
+        if (this.sizeParkingSlot == 0) {
+            System.out.println("no parking slots have been created");
         } else if(this.park.size() > 0) {
             System.out.println("Slot No.\tRegistration Number.\tColor");
             Car car;
@@ -57,7 +59,7 @@ public class Parking {
 
     public void leave(String slot) {
         if (this.sizeParkingSlot == 0) {
-            System.out.println("Sorry, parking lot is not created");
+            System.out.println("no parking slots have been created");
         } else if (this.park.size() > 0) {
             if (this.park.containsKey(slot)) {
                 this.park.remove(slot);
@@ -71,7 +73,7 @@ public class Parking {
 
     public void getSlotNumbersWithColor(String color) {
         if (sizeParkingSlot == 0) {
-            System.out.println("the parking slot is 0");
+            System.out.println("no parking slots have been created");
         } else if(this.park.size() > 0) {
             ArrayList<Integer> slotList = new ArrayList<Integer>() {
             };
@@ -104,7 +106,7 @@ public class Parking {
 
     public void getRegNoWithColor(String color) {
         if (this.sizeParkingSlot == 0) {
-            System.out.println("Tempat Parkir lagi kosong");
+            System.out.println("no parking slots have been created");
         } else if(this.park.size() > 0) {
             ArrayList<String> slotList = new ArrayList<>() {};
             Car car;
@@ -135,7 +137,7 @@ public class Parking {
 
     public void getSlotNumberWithRegistration(String noReg) {
         if (this.sizeParkingSlot == 0) {
-            System.out.println("Tempat parkir lagi kosong");
+            System.out.println("no parking slots have been created");
         } else if(this.park.size() > 0) {
             ArrayList<Integer> slotList = new ArrayList<Integer>() {};
             Car car;
