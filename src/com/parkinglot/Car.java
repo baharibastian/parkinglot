@@ -3,10 +3,10 @@ package com.parkinglot;
 public class Car {
 
     public String color;
-    public String noReg;
+    public String regNo;
 
-    public Car(String color, String noReg) {
+    public Car(String noReg, String color) {
         this.color = color;
-        this.noReg = noReg;
+        this.regNo = noReg;
     }
 }

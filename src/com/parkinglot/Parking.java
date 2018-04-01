@@ -4,15 +4,6 @@ import java.util.*;
 
 public class Parking {
 
-    private class Car {
-        String regNo;
-        String color;
-        public Car(String regNo, String color) {
-            this.regNo = regNo;
-            this.color = color;
-        }
-    }
-
     ArrayList<Integer> parkingSpace;
     int sizeParkingSlot = 0;
     Map<String, Car> park;
