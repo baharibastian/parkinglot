@@ -34,6 +34,7 @@ public class Parking {
             String slot = parkingSpace.get(0).toString();
             Car car = new Car(noReg, color);
             this.park.put(slot, car);
+            System.out.println("Allocated slot number: "+slot);
             parkingSpace.remove(0);
         }
     }
