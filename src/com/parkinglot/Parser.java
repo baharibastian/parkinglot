@@ -1,5 +1,6 @@
 package com.parkinglot;
 
+import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -56,6 +57,26 @@ public class Parser {
                 break;
             default:
                 System.out.println("Default Input");
+        }
+    }
+
+    public void parseFileInput(String filePath) {
+        // Assuming input to be a valid file path.
+        File inputFile = new File(filePath);
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(inputFile));
+            String line;
+            try {
+                while ((line = br.readLine()) != null) {
+                    parseInput(line.trim());
+                }
+            } catch (IOException ex) {
+                System.out.println("Error in reading the input file.");
+                ex.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found in the path specified.");
+            e.printStackTrace();
         }
     }
 
