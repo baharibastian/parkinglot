@@ -16,7 +16,6 @@ public class Parser {
 
     public void parseInput(String input) {
         String[] input_arr = input.split(" ");
-        System.out.println(Arrays.toString(input_arr));
         switch (input_arr.length) {
             case 1:
                 try {
